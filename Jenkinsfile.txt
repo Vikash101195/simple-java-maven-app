@@ -3,7 +3,6 @@ pipeline {
     stages('git repo & clean') {
        stage {
          steps {
-            sh "git clone https://github.com/Vikash101195/simple-java-maven-app.git"
             sh "mvn clean simple-java-maven-app"
        }
    }
@@ -17,9 +16,9 @@ pipeline {
              sh "mvn test simple-java-maven-app" 
        }
    }
-stage('package') {
-   steps {
-      sh "mvn package simple-java-maven-app"
+       stage('package') {
+          steps {
+             sh "mvn package simple-java-maven-app"
       }
     }
    }
